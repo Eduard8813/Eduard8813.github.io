@@ -1,0 +1,76 @@
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background: linear-gradient(to bottom, #FF00FF, #8A2BE2, #9400D3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-container {
+    background-color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.btn-registro {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px; /* Margen superior para separar los botones */
+    transition: background-color 0.3s ease; /* Animación de cambio de color */
+}
+}
+
+input {
+    width: 50%;
+    padding: 20px;
+    margin-bottom: 10px;
+    border: 2px solid #ccc;
+    border-radius: 14px;
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; 
+}
+
+.oculto {
+    display: none;
+}
+
+.boton-rojo {
+    background-color: #dc3545;
+    color: white;
+}
+
+.btn-registro {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px; 
+    transition: background-color 0.3s ease;
+}
+
+.btn-registro:hover,
+button:hover {
+    background-color: #0056b3;
+}
+	
