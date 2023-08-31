@@ -10,8 +10,8 @@ function iniciarSesion() {
 
     if (usuariosRegistrados.hasOwnProperty(usuario) && usuariosRegistrados[usuario] === contrasena) {
         alert("Inicio de sesión exitoso");
-	    window.location.href:;
-        return false; 
+	    redirigirSitio();
+  return false; 
     } else {
         alert("Credenciales incorrectas");
         return false;
@@ -27,7 +27,11 @@ function registrarUsuario() {
     alert("Usuario registrado exitosamente");
     return false; 
 }
-    var registroContainer = document.getElementById("registro-container");
+
+ function redirigirSitio() {
+window.location.href = "":
+  }
+    var registroContainer = d1ocument.getElementById("registro-container");
     registroContainer.classList.remove("oculto");
 
     window.location.href = "#registro-container";
