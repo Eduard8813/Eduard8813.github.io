@@ -10,7 +10,6 @@ function iniciarSesion() {
 
     if (usuariosRegistrados.hasOwnProperty(usuario) && usuariosRegistrados[usuario] === contrasena) {
         alert("Inicio de sesión exitoso");
-        mostrarBoton();
         return false; 
     } else {
         alert("Credenciales incorrectas");
@@ -26,12 +25,6 @@ function registrarUsuario() {
     guardarUsuariosRegistrados();
     alert("Usuario registrado exitosamente");
     return false; 
-}
-
-function mostrarBoton() {
-    var boton = document.getElementById("boton-container");
-    boton.classList.remove("oculto");
-    window.location.href = "#boton-container";
 }
 
 function redirigirSitio() {
