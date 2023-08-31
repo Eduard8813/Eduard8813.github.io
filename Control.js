@@ -10,6 +10,7 @@ function iniciarSesion() {
 
     if (usuariosRegistrados.hasOwnProperty(usuario) && usuariosRegistrados[usuario] === contrasena) {
         alert("Inicio de sesión exitoso");
+	    window.location.href:;
         return false; 
     } else {
         alert("Credenciales incorrectas");
@@ -26,12 +27,6 @@ function registrarUsuario() {
     alert("Usuario registrado exitosamente");
     return false; 
 }
-
-function redirigirSitio() {
-    window.location.href = "file:///C:/Users/DELL/Desktop/Programacion%20en%20visual%20code/Sitio%20web%20del%20proyecto/Sitio%20web/Sitio%20web.html"; // Redirección al sitio web
-}
-
-function irARegistro() {
     var registroContainer = document.getElementById("registro-container");
     registroContainer.classList.remove("oculto");
 
