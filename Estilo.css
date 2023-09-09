@@ -1,173 +1,113 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #FFFFFF;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;	
 }
-
-.header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding: 20px 100px;
-    display: flex;
-    justify-content: left;
-    z-index: 99;
-}
-
-.header .logo {
-    font-size: 3em;
-    font-weight: 700;
-    color:  #000000 ;
-    text-decoration: none;
-}
-
-.header .nav a {
-    position: relative;
-    font-size: 1.2em;
-    color:  #000000 ;
-    text-decoration: none;
-    margin-left: 40px;
-    font-weight: 600;
-}
-
-.header .nav a::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    width: 100%;
-    height: 3px;
-    background-color: #FFFFFF;
+.button {
+    margin: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
     border-radius: 5px;
-    bottom: -6px;
-    transform: scaleX(0);
-    transition: 0.5s;
+    cursor: pointer;
+    color: #fff;
 }
 
-.header .nav a:hover::after {
-    transform: scaleX(1);
+.whatsapp-link {
+      display: inline-block;
+      padding: 26px;
+      border: 5px solid red;
+      border-radius: 25px;
+      text-decoration: none;
+      color: black;
+      font-weight: bold;
+  }
+  
+.button-left {
+    align-self: flex-start;
+    background-color: #3498db;
 }
-section {
-    position: relative;
-    width: 80%;
-    height: 100vh;
-    background: url('https://verdecora.es/blog/wp-content/uploads/2018/08/plantas-vivaces-flor-tardia.jpg') no-repeat;
-    background-position: center;
-    background-size: cover;
+
+.button-right {
+    align-self: flex-end;
+    background-color: #2ecc71;
+}
+
+
+.background {
+    background: linear-gradient(to bottom, #FF00FF, #8A2BE2,#9400D3);
+    min-height: 100vh;
     display: flex;
-    padding: 80px 200px 0;
+    justify-content: center;
     align-items: center;
 }
 
-section .content {
-    max-width: 600px;
-    color: #FFFFFF;
+.container {
+    max-width: 1200px;
+    padding: 20px;
+    text-align: center;
 }
 
-.content h1 {
-    font-size:3em;
-	letter-spacing: 0.3	em;
-    color: #ff6633;
+.header-title {
+    color: #00FFFF;
+    font-size: 32px;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
-.content p {
-   margin: 10px 0 40px;
-}
-
-.content a {
-    text-decoration: none;
-    color:#000000 ;
-    border: 2px solid #000000;
-    font-weight: 500;
-    padding: 10px 40px;
-    border-radius: 40px;
-    transition: 0.5s;
-}
-
-.remember-forgot {
-    color:  #FFFFFF;
+.main {
     display: flex;
     justify-content: space-between;
-    font-weight: 900;
-    margin: 0px 0 15px;
+    flex-wrap: wrap;
+    margin-top: 20px;
 }
 
-.remember-forgot a {
-    color:  #000000;
-    text-decoration: none;
+.plant-button {
+    flex: 1;
+    margin: 5px;
+    padding: 15px 25px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color:#000000;
+    color: #0000FF;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: transform 0.4s ease, background-color 0.4s ease;
 }
 
-.remember-forgot a:hover {
-    text-decoration: underline;
+.plant-button:hover {
+    transform: translateY(-5px);
+    background-color: #3498db;
+    color: #F5DEB3;
 }
 
-button {
-    width: 100%;
-    height: 50px;
-    border: 1px solid #000000 ;
-    border-radius: 40px;
-    font-size: 20px;
-    font-weight: 800;
-    margin-bottom: 20px;
-    transition: 1s;
-    background-color: #ff6633;
-    color: #000000 ;
+.info-container {
+    margin-top: 20px;
+    display: none;
 }
 
-.register-link {
-    display: flex;
-    justify-content: center;
-    color:  #FFFFFF;
+.plant-info {
+    background-color:#fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    max-width: 300px;
+    margin: 0 auto;
+    color: #333;
 }
 
-.register-link a {
-    text-decoration: none;
-    color: #FFFFFF;
-    font-weight: 600;
+.fade-in {
+    animation: fadeIn 0.9s ease-out both;
 }
 
-.register-link a:hover {
-    text-decoration: underline;
-}
-
-.login {
-    position: relative;
-    width: 500px;
-}
-
-.login h1 {
-    text-align: center;
-    color: #FFFFFF;
-    font-size: 2em;
-}
-
-.input-box {
-    position: relative;
-    width: 100%;
-    height: 50px;
-    padding: 40px 0;
-}
-
-.input-box .input {
-    width: 100%;
-    height: 50px;
-    border: 2px solid #27FF00 ;
-    border-radius: 40px;
-    background: transparent;
-    outline: none;
-}
-
-::placeholder {
-    color: #000000;
-    font-size: 1.3em;
-    padding: 0 20px;
-}
-
-.input-box i {
-    position: absolute;
-    top: 55px;
-    left: 400px;
-    font-size: 1.2em;
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
