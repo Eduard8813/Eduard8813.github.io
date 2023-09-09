@@ -1,76 +1,173 @@
 body {
+    font-family: Arial, sans-serif;
+    background-color: #FFFFFF;
     margin: 0;
     padding: 0;
-    min-height: 100vh;
-    background: linear-gradient(to bottom, #FF00FF, #8A2BE2, #9400D3);
+    box-sizing: border-box;	
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 100px;
     display: flex;
-    justify-content: center;
+    justify-content: left;
+    z-index: 99;
+}
+
+.header .logo {
+    font-size: 3em;
+    font-weight: 700;
+    color:  #000000 ;
+    text-decoration: none;
+}
+
+.header .nav a {
+    position: relative;
+    font-size: 1.2em;
+    color:  #000000 ;
+    text-decoration: none;
+    margin-left: 40px;
+    font-weight: 600;
+}
+
+.header .nav a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #FFFFFF;
+    border-radius: 5px;
+    bottom: -6px;
+    transform: scaleX(0);
+    transition: 0.5s;
+}
+
+.header .nav a:hover::after {
+    transform: scaleX(1);
+}
+section {
+    position: relative;
+    width: 80%;
+    height: 100vh;
+    background: url('https://verdecora.es/blog/wp-content/uploads/2018/08/plantas-vivaces-flor-tardia.jpg') no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    padding: 80px 200px 0;
     align-items: center;
 }
 
-.login-container {
-    background-color: white;
-    padding: 10px 20px;
-    border-radius: 5px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-    text-align: center;
+section .content {
+    max-width: 600px;
+    color: #FFFFFF;
+}
+
+.content h1 {
+    font-size:3em;
+	letter-spacing: 0.3	em;
+    color: #ff6633;
+}
+
+.content p {
+   margin: 10px 0 40px;
+}
+
+.content a {
+    text-decoration: none;
+    color:#000000 ;
+    border: 2px solid #000000;
+    font-weight: 500;
+    padding: 10px 40px;
+    border-radius: 40px;
+    transition: 0.5s;
+}
+
+.remember-forgot {
+    color:  #FFFFFF;
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    justify-content: space-between;
+    font-weight: 900;
+    margin: 0px 0 15px;
 }
 
-.btn-registro {
-    background-color: #28a745;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 10px; /* Margen superior para separar los botones */
-    transition: background-color 0.3s ease; /* Animación de cambio de color */
-}
+.remember-forgot a {
+    color:  #000000;
+    text-decoration: none;
 }
 
-input {
-    width: 50%;
-    padding: 20px;
-    margin-bottom: 10px;
-    border: 2px solid #ccc;
-    border-radius: 14px;
+.remember-forgot a:hover {
+    text-decoration: underline;
 }
 
 button {
-    background-color: #007bff;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: background-color 0.3s ease; 
+    width: 100%;
+    height: 50px;
+    border: 1px solid #000000 ;
+    border-radius: 40px;
+    font-size: 20px;
+    font-weight: 800;
+    margin-bottom: 20px;
+    transition: 1s;
+    background-color: #ff6633;
+    color: #000000 ;
 }
 
-.oculto {
-    display: none;
+.register-link {
+    display: flex;
+    justify-content: center;
+    color:  #FFFFFF;
 }
 
-.boton-rojo {
-    background-color: #dc3545;
-    color: white;
+.register-link a {
+    text-decoration: none;
+    color: #FFFFFF;
+    font-weight: 600;
 }
 
-.btn-registro {
-    background-color: #28a745;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 10px; 
-    transition: background-color 0.3s ease;
+.register-link a:hover {
+    text-decoration: underline;
 }
 
-.btn-registro:hover,
-button:hover {
-    background-color: #0056b3;
+.login {
+    position: relative;
+    width: 500px;
 }
-	
+
+.login h1 {
+    text-align: center;
+    color: #FFFFFF;
+    font-size: 2em;
+}
+
+.input-box {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    padding: 40px 0;
+}
+
+.input-box .input {
+    width: 100%;
+    height: 50px;
+    border: 2px solid #27FF00 ;
+    border-radius: 40px;
+    background: transparent;
+    outline: none;
+}
+
+::placeholder {
+    color: #000000;
+    font-size: 1.3em;
+    padding: 0 20px;
+}
+
+.input-box i {
+    position: absolute;
+    top: 55px;
+    left: 400px;
+    font-size: 1.2em;
+}
