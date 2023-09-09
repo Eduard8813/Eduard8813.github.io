@@ -11,7 +11,7 @@ const btnTalvez = document.getElementById("btnTalvez");
 
 const btnRetroceso = document.getElementById("btnRetroceso");
 
-unction showElement(element) {
+function showElement(element) {
     if (element) {
         element.style.display = "block";
     }
@@ -50,7 +50,6 @@ btnTalvez.addEventListener("click", function() {
     showElement(infoTalvez);
 });
 
-
 btnRetroceso.addEventListener("click", function() {
     showElement(question);
     showElement(mainDiv);
@@ -59,6 +58,7 @@ btnRetroceso.addEventListener("click", function() {
     hideElement(infoNo);
     hideElement(infoTalvez);
 });
+
 // Nuevos botones para comprar plantas
 const btnCompraUno = document.createElement("button");
 btnCompraUno.textContent = "Compra uno";
@@ -85,16 +85,3 @@ btnCompraTres.addEventListener("click", function() {
 mainDiv.appendChild(btnCompraUno);
 mainDiv.appendChild(btnCompraDos);
 mainDiv.appendChild(btnCompraTres);
-
-btnComprar.addEventListener("click", function() {
-    alert("¡Información enviada a la ESP32 para comprar!");
-    
-    // Volver a la página de inicio
-    showElement(question);
-    showElement(mainDiv);
-    hideElement(infoDiv);
-    hideElement(infoSi);
-    hideElement(infoNo);
-    hideElement(infoTalvez);
-});
-
