@@ -1,47 +1,53 @@
-var usuariosRegistrados = JSON.parse(localStorage.getItem("usuariosRegistrados")) || {};
+const mainDiv = document.getElementById("main");
+const infoDiv = document.getElementById("infoDiv");
+const question = document.getElementById("question");
+const infoSi = document.getElementById("infoSi");
+const infoNo = document.getElementById("infoNo");
+const infoTalvez = document.getElementById("infoTalvez");
 
-function guardarUsuariosRegistrados() {
-    localStorage.setItem("usuariosRegistrados", JSON.stringify(usuariosRegistrados));
-}
+const btnSi = document.getElementById("btnSi");
+const btnNo = document.getElementById("btnNo");
+const btnTalvez = document.getElementById("btnTalvez");
 
-function iniciarSesion() {
-    var usuario = document.getElementById("usuario").value;
-    var contrasena = document.getElementById("contrasena").value;
+const btnRetroceso = document.getElementById("btnRetroceso");
+const btnComprar = document.getElementById("btnComprar");
 
-    if (usuariosRegistrados.hasOwnProperty(usuario) && usuariosRegistrados[usuario] === contrasena) {
-        alert("Inicio de sesión exitoso");
-        mostrarBoton();
-        return false; 
-    } else {
-        alert("Credenciales incorrectas");
-        return false;
-    }
-}
+// Nuevos botones para comprar plantas
+const btnCompraUno = document.createElement("button");
+btnCompraUno.textContent = "Compra uno";
+btnCompraUno.addEventListener("click", function() {
+    alert("¡Información enviada a la ESP32 para comprar Planta uno!");
+    // Aquí puedes agregar código para enviar la solicitud al ESP32 para comprar la Planta uno
+});
 
-function registrarUsuario() {
-    var nuevoUsuario = document.getElementById("nuevo-usuario").value;
-    var nuevaContrasena = document.getElementById("nueva-contrasena").value;
+const btnCompraDos = document.createElement("button");
+btnCompraDos.textContent = "Compra dos";
+btnCompraDos.addEventListener("click", function() {
+    alert("¡Información enviada a la ESP32 para comprar Planta dos!");
+    // Aquí puedes agregar código para enviar la solicitud al ESP32 para comprar la Planta dos
+});
 
-    usuariosRegistrados[nuevoUsuario] = nuevaContrasena;
-    guardarUsuariosRegistrados();
-    alert("Usuario registrado exitosamente");
-    return false; 
-}
+const btnCompraTres = document.createElement("button");
+btnCompraTres.textContent = "Compra tres";
+btnCompraTres.addEventListener("click", function() {
+    alert("¡Información enviada a la ESP32 para comprar Planta tres!");
+    // Aquí puedes agregar código para enviar la solicitud al ESP32 para comprar la Planta tres
+});
 
-function mostrarBoton() {
-    var boton = document.getElementById("boton-container");
-    boton.classList.remove("oculto");
-   
-    window.location.href = "#boton-container";
-}
+// Agregar los nuevos botones al div principal
+mainDiv.appendChild(btnCompraUno);
+mainDiv.appendChild(btnCompraDos);
+mainDiv.appendChild(btnCompraTres);
 
-function redirigirSitio() {
-    window.location.href = "content://com.paprbit.dcoder.fileprovider/files/temp.html ";
-}
-
-function irARegistro() {
-    var registroContainer = document.getElementById("registro-container");
-    registroContainer.classList.remove("oculto");
+btnComprar.addEventListener("click", function() {
+    alert("¡Información enviada a la ESP32 para comprar!");
     
-    window.location.href = "#registro-container";
-}
+    // Volver a la página de inicio
+    showElement(question);
+    showElement(mainDiv);
+    hideElement(infoDiv);
+    hideElement(infoSi);
+    hideElement(infoNo);
+    hideElement(infoTalvez);
+});
+
