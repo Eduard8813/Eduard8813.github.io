@@ -1,29 +1,53 @@
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="Estilo.css">
-    <script src="Control.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Estilo.css">
+    <script src="Control.js" crossorigin="anonymous"></script>
+    <title>Navegador</title>
 </head>
+
 <body>
-<div class="login-container">
-    <form id="login-form" onsubmit="return iniciarSesion()">
-        <input type="text" id="usuario" placeholder="Usuario" required="">
-        <input type="password" id="contrasena" placeholder="Contraseña" required="">
-        <button type="submit">Iniciar sesión</button>
-    </form>
-    <button id="btnRegistro" class="btn-registro" onclick="irARegistro()">Registrarse</button>
-</div>
-<div id="boton-container" class="oculto">
-    <button id="irAlSitio" class="boton-rojo" onclick="redirigirSitio()">Bienvenido hacer click para continuar.</button>
-</div>
-<div id="registro-container" class="oculto">
-    <form id="registro-form" onsubmit="return registrarUsuario()">
-        <h3>Registro de usuario</h3>
-        <input type="text" id="nuevo-usuario" placeholder="Nuevo Usuario" required="">
-        <input type="password" id="nueva-contrasena" placeholder="Nueva Contraseña" required="">
-        <button type="submit">Registrar</button>
-    </form>
-</div>
+    <header class="header">
+        <a href="#" class="logo"><i class="fa-solid fa-globe"></i>PROYECT X</a> 
+        <nav class="nav">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Menu</a>
+            <a href="#">Review</a>
+            <a href="#">Contact</a>
+        </nav>
+    </header>
+
+    <section class="Home">
+        <div class="Content"> 
+			<h1> BIENVENIDO!!!</h1>
+          <h1>El sitio web se utiliza para controlar la venta de plantas ornamentales</h1>
+        </div>
+        <div class="Login">
+            <h1 align = "center">Sign in</h1>
+            <form action="#">
+                <div class="input-box">
+                    <span class="icon"> 
+                        <i class="fa-solid fa envelope"></i> 
+                    </span>
+                    <input type="text" class="input" placeholder="Usuario" autocomplete="off" required>
+                </div>
+
+                <div class="input-box">
+                    <span class="icon">
+                        <i class="fa-solid fa lock"></i>
+                        <input type="password" class="input" placeholder="password" autocomplete="off" required>
+                    </span>
+                </div>
+
+                <button type="submit">Login</button>
+            </form>
+        </div>
+    </section>
+
 </body>
+
 </html>
