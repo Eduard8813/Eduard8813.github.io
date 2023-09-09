@@ -10,8 +10,55 @@ const btnNo = document.getElementById("btnNo");
 const btnTalvez = document.getElementById("btnTalvez");
 
 const btnRetroceso = document.getElementById("btnRetroceso");
-const btnComprar = document.getElementById("btnComprar");
 
+unction showElement(element) {
+    if (element) {
+        element.style.display = "block";
+    }
+}
+
+function hideElement(element) {
+    if (element) {
+        element.style.display = "none";
+    }
+}
+
+btnSi.addEventListener("click", function() {
+    hideElement(question);
+    hideElement(mainDiv);
+    showElement(infoDiv);
+    showElement(infoSi);
+    hideElement(infoNo);
+    hideElement(infoTalvez);
+});
+
+btnNo.addEventListener("click", function() {
+    hideElement(question);
+    hideElement(mainDiv);
+    showElement(infoDiv);
+    hideElement(infoSi);
+    showElement(infoNo);
+    hideElement(infoTalvez);
+});
+
+btnTalvez.addEventListener("click", function() {
+    hideElement(question);
+    hideElement(mainDiv);
+    showElement(infoDiv);
+    hideElement(infoSi);
+    hideElement(infoNo);
+    showElement(infoTalvez);
+});
+
+
+btnRetroceso.addEventListener("click", function() {
+    showElement(question);
+    showElement(mainDiv);
+    hideElement(infoDiv);
+    hideElement(infoSi);
+    hideElement(infoNo);
+    hideElement(infoTalvez);
+});
 // Nuevos botones para comprar plantas
 const btnCompraUno = document.createElement("button");
 btnCompraUno.textContent = "Compra uno";
