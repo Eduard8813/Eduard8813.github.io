@@ -2,7 +2,7 @@ const mainDiv = document.getElementById("main");
 const infoDiv = document.getElementById("infoDiv");
 const question = document.getElementById("question");
 const infoSi = document.getElementById("infoSi");
-const infoNo = document.getElementById("infoNo");
+const infoNo = document.getElementById("infoNo"); 
 const infoTalvez = document.getElementById("infoTalvez");
 
 const btnSi = document.getElementById("btnSi");
