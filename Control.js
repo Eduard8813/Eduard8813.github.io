@@ -1,3 +1,4 @@
+
 const mainDiv = document.getElementById("main");
 const infoDiv = document.getElementById("infoDiv");
 const question = document.getElementById("question");
