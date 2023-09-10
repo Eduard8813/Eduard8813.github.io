@@ -1,48 +1,61 @@
 <!DOCTYPE html>
 <html>
-<head> 	
-
+<head> 
   <link rel="stylesheet" type="text/css" href="Estilo.css"> 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> 
   <title>Sistema despachador de plantas automáticas.</title> 
- </head> 
- <body> 
+  <style>
+    /* Estilo para los botones "Comprar" y "Atrás" uno al lado del otro */
+    .button-container {
+      display: flex;
+      justify-content: space-between;
+    }
+  </style>
+</head> 
+<body> 
   <div class="background"> 
-   <div class="container"> 
-    <header> 
-     <h1 class="header-title">Venta de planta ornamentales.</h1> 
-     <p align="center">¿Que tipo de planta desea hoy?</p> 
-    </header> 
-    <div class="main"> <button id="btnSi" class="plant-button">Culantro</button> <button id="btnNo" class="plant-button">Hierba buena</button> <button id="btnTalvez" class="plant-button">Sábila</button> 
+    <div class="container"> 
+      <header> 
+        <h1 class="header-title">Venta de plantas ornamentales.</h1> 
+        <h1 align="center">¿Qué tipo de planta desea hoy?</h1> 
+      </header> 
+      <div class="main"> 
+        <button id="btnSi" class="plant-button">Culantro</button> 
+        <button id="btnNo" class="plant-button">Hierba buena</button> 
+        <button id="btnTalvez" class="plant-button">Sábila</button> 
+      </div> 
+      <div id="infoDiv" class="info-container"> 
+        <div id="infoSi" class="plant-info" style="display: none;"> 
+          <h2>Información sobre Culantro</h2>
+		  <img src="https://agrosemval.com/wp-content/uploads/2020/05/cilantro-nacional-castilla-ipc-01.jpg" alt="Imagen de Culantro" width="100" height="100"> 
+          <h3> Es una hierba aromática originaria del sudeste asiático y del norte de África, de sabor fuerte y múltiples beneficios para la salud. Es un buen antiinflamatorio, tiene propiedades antisépticas (bloquea la proliferación de microorganismos), es diurético y muy rico en vitamina C y K.</h3>
+          <div class="button-container"> 
+		   <button onclick="Comprar Culandro">Activar Planta Uno</button> 
+            <button id="btnAtrasCulantro" class="button-right fade-in button">Atrás</button>
+          </div>
+        </div> 
+        <div id="infoNo" class="plant-info" style="display: none;"> 
+          <h2>Información sobre Hierba buena</h2>
+		   <img src="https://t1.uc.ltmcdn.com/es/posts/5/6/6/como_cuidar_la_hierbabuena_los_mejores_consejos_27665_600.jpg" alt="Imagen de hierbabuena" width="100" height="100"> 
+           <h3>La hierbabuena es una hierba de olor y un condimento muy apreciado por el aroma y el contenido de aceite de sus hojas. Se usa sobre todo en la industria alimenticia y en la elaboración de licores; en menor escala se consume deshidratada, para hacer tés, fresca y en combinación con otras especies aromáticas.</h3>
+          <div class="button-container">
+             <button onclick="activarPlanta(1)">Comprar Hierba buena</button>
+            <button id="btnAtrasHierbaBuena" class="button-right fade-in button">Atrás</button>
+          </div>
+        </div> 
+        <div id="infoTalvez" class="plant-info" style="display: none;"> 
+          <h2>Información sobre Sábila</h2>
+		   <img src="https://aloepluslanzarote.com/static/media/entradas/que_es_la_sabila.jpeg" alt="Imagen de sabila" width="100" height="100"> 
+		   <h3>La sábila, una planta, produce dos sustancias que se usan en productos para el cuidado de la salud: un gel transparente y un látex amarillo. Por lo general, las personas utilizan el gel transparente de la sábila de forma tópica en cremas y ungüentos para tratar quemaduras, la psoriasis e incluso el acné.</h3>
+		  <div class="button-container">
+            <button onclick="activarPlanta(1)">Comprar Sabila</button>
+            <button id="btnRetroceso" class="button-right fade-in button">Atrás</button>
+          </div>
+        </div> 
+      </div> 
     </div> 
-    <div id="infoDiv" class="info-container"> 
-     <div id="infoSi" class="plant-info" style="display: none;"> 
-      <h2>Información sobre Culantro</h2> 
-      <p>El cilantro (también conocido como culantro en algunos lugares) es una hierba aromática que se utiliza ampliamente en la cocina para agregar sabor y aroma a una variedad de platos.
-	  Tanto las hojas como las semillas de esta planta son comestibles y tienen diferentes perfiles de sabor. Las hojas de cilantro tienen un sabor fresco y ligeramente cítrico, mientras que las semillas de cilantro tienen un sabor más terroso y especiado.
-	  El cilantro se encuentra comúnmente en platos de diversas culturas, como la cocina asiática, mexicana, india y mediterránea. Se agrega a guisos, ensaladas, salsas, sopas y platos a base de arroz para realzar los sabores. Además de su uso culinario, el cilantro también se ha utilizado en la medicina tradicional por sus posibles beneficios para la salud, como propiedades antioxidantes y digestivas. 
-	  En resumen, el cilantro es una planta aromática versátil que agrega un toque distintivo a muchas preparaciones culinarias.</p> 
-     </div> 
-     <div id="infoNo" class="plant-info" style="display: none;"> 
-      <h2>Información sobre Hierba buena</h2> 
-      <p>La hierba buena, también conocida como menta verde o menta común, es una planta herbácea aromática apreciada por sus propiedades refrescantes y medicinales. Sus hojas de color verde oscuro son ricas en aceites esenciales que le confieren su característico aroma y sabor fresco. La hierba buena se utiliza en la cocina y la medicina tradicional en muchas culturas. En la cocina, sus hojas se emplean como condimento para realzar bebidas como el té de menta, postres, ensaladas y platos salados. Su sabor refrescante agrega un toque vibrante a una variedad de comidas. En la medicina tradicional, la hierba buena se ha utilizado durante siglos por sus propiedades digestivas y calmantes. El té de hierba buena es conocido por ayudar en la digestión y aliviar malestares estomacales, así como para proporcionar un efecto relajante en el cuerpo y la mente. Además, su aroma se utiliza en productos como aceites esenciales y bálsamos para aliviar dolores de cabeza y descongestionar las vías respiratorias. En resumen, la hierba buena es una planta aromática versátil que se utiliza tanto en la cocina como en la medicina tradicional por su sabor refrescante y sus posibles beneficios para la salud.</p> 
-     </div> 
-     <div id="infoTalvez" class="plant-info" style="display: none;"> 
-      <h2>Información sobre Sábila</h2> 
-      <p>La sábila, también conocida como aloe vera, es una planta suculenta apreciada por sus múltiples usos en la medicina y la cosmética. Sus hojas carnosas contienen un gel transparente que ha sido utilizado durante siglos por sus propiedades curativas y regenerativas para la piel. El gel de sábila se utiliza comúnmente para aliviar quemaduras leves, irritaciones cutáneas y picaduras de insectos debido a sus propiedades antiinflamatorias y calmantes. También se ha empleado en la industria cosmética para la elaboración de cremas hidratantes, lociones y productos para el cuidado de la piel debido a su capacidad para humectar y rejuvenecer la epidermis. Además de su uso tópico, el consumo interno de sábila en forma de jugo o suplemento ha sido promocionado por sus posibles beneficios para la salud, como el apoyo a la digestión y el sistema inmunológico. Sin embargo, es importante tener precaución y consultar a un profesional de la salud antes de consumirla internamente, ya que algunas partes de la planta pueden tener propiedades laxantes. En resumen, la sábila es una planta versátil conocida por su gel curativo y sus posibles beneficios para la piel, así como por su uso potencial en el cuidado de la salud y la cosmética..</p> 
-     </div> /*
-	 <button id="btnRetroceso" class="button-left fade-in button">Atrás</button> 
-	 <button id="btnComprar" class="button-right fade-in button">Comprar</button>
-			*/
-			<button onclick="comprarPlanta(1)">Compra uno</button>
-            <button onclick="comprarPlanta(2)">Compra dos</button>
-            <button onclick="comprarPlanta(3)">Compra tres</button>
-
-    </div>
-   <h1 class="header"> Para cualquier duda o pregunta escribir al</h1>
-  <a href="https://wa.me/50589007093?text = Preguntar al personal." class="whatsapp-link" target="_blank"> Enviar mensaje</a>
-   </div> 
   </div> 
-  <script src="control.js"></script> 
- 
-</body></html>
+  <script src= "control.js"></script> 
+  
+  </body>
+</html>
