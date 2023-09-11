@@ -53,37 +53,35 @@ btnTalvez.addEventListener("click", function() {
     showElement(infoTalvez);
 });
 
-// Event listeners para los botones de compra
-document.getElementById("btnActivarPlanta1").addEventListener("click", function() {
-    activarPlanta(1);
-});
+const axios = require('axios');
 
-document.getElementById("btnActivarPlanta2").addEventListener("click", function() {
-    activarPlanta(2);
-});
+const url = 'https://eduard8813.github.io';
 
-document.getElementById("btnActivarPlanta3").addEventListener("click", function() {
-    activarPlanta(3);
-});
-
-function activarPlanta(planta) {
-    // Realiza una solicitud HTTP POST al ESP32 para activar la planta
-    fetch('/activar_planta', {
-        method: 'POST',  // Método HTTP utilizado (POST)
-        headers: {
-            'Content-Type': 'application/json'  // Encabezados de la solicitud
-        },
-        body: JSON.stringify({ planta: planta })  // Cuerpo de la solicitud en formato JSON
-    })
-    .then(response => response.text())  // Convierte la respuesta a texto
-    .then(data => {
-        alert(data); // Muestra la respuesta del ESP32 en una ventana emergente (alert)
-        location.reload(); // Recarga la página después de activar la planta
-    })
-    .catch(error => {
-        console.error('Error:', error);  // Maneja cualquier error que ocurra durante la solicitud
-    });
+function activateMotor(motorNumber) {
+  console.log(`Activando el motor ${motorNumber}`);
+  // Aquí va tu código para activar los motores
 }
+
+// Función para verificar las compras
+async function checkPurchases() {
+  try {
+    const response = await axios.get(url);
+
+    if (response.data.includes('comprar planta sabila')) {
+      activateMotor(1);
+    } else if (response.data.includes('comprar hierba buena')) {
+      activateMotor(2);
+    } else if (response.data.includes('comprar planta culantro')) {
+      activateMotor(3);
+    }
+  } catch (error) {
+    console.error(`Error: ${error}`);
+  }
+}
+
+// Verifica las compras cada 5 segundos
+setInterval(checkPurchases, 5000);
+
 
 // Event listeners para los botones "Atrás"
 const btnAtrasCulantro = document.getElementById("btnAtrasCulantro");
