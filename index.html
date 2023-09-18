@@ -1,61 +1,50 @@
+
 <!DOCTYPE html>
 <html>
-<head> 
-  <link rel="stylesheet" type="text/css" href="Estilo.css"> 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> 
-  <title>Sistema despachador de plantas automáticas.</title> 
-  <style>
-    /* Estilo para los botones "Comprar" y "Atrás" uno al lado del otro */
-    .button-container {
-      display: flex;
-      justify-content: space-between;
-    }
-  </style>
-</head> 
-<body> 
-  <div class="background"> 
-    <div class="container"> 
-      <header> 
-        <h1 class="header-title">Venta de plantas ornamentales.</h1> 
-        <h1 align="center">¿Qué tipo de planta desea hoy?</h1> 
-      </header> 
-      <div class="main"> 
-        <button id="btnSi" class="plant-button">Culantro</button> 
-        <button id="btnNo" class="plant-button">Hierba buena</button> 
-        <button id="btnTalvez" class="plant-button">Sábila</button> 
-      </div> 
-      <div id="infoDiv" class="info-container"> 
-        <div id="infoSi" class="plant-info" style="display: none;"> 
-          <h2>Información sobre Culantro</h2>
-		  <img src="https://agrosemval.com/wp-content/uploads/2020/05/cilantro-nacional-castilla-ipc-01.jpg" alt="Imagen de Culantro" width="100" height="100"> 
-          <h3> Es una hierba aromática originaria del sudeste asiático y del norte de África, de sabor fuerte y múltiples beneficios para la salud. Es un buen antiinflamatorio, tiene propiedades antisépticas (bloquea la proliferación de microorganismos), es diurético y muy rico en vitamina C y K.</h3>
-          <div class="button-container"> 
-		   <button onclick="Comprar Culandro">Activar Planta Uno</button> 
-            <button id="btnAtrasCulantro" class="button-right fade-in button">Atrás</button>
-          </div>
-        </div> 
-        <div id="infoNo" class="plant-info" style="display: none;"> 
-          <h2>Información sobre Hierba buena</h2>
-		   <img src="https://t1.uc.ltmcdn.com/es/posts/5/6/6/como_cuidar_la_hierbabuena_los_mejores_consejos_27665_600.jpg" alt="Imagen de hierbabuena" width="100" height="100"> 
-           <h3>La hierbabuena es una hierba de olor y un condimento muy apreciado por el aroma y el contenido de aceite de sus hojas. Se usa sobre todo en la industria alimenticia y en la elaboración de licores; en menor escala se consume deshidratada, para hacer tés, fresca y en combinación con otras especies aromáticas.</h3>
-          <div class="button-container">
-             <button onclick="activarPlanta(1)">Comprar Hierba buena</button>
-            <button id="btnAtrasHierbaBuena" class="button-right fade-in button">Atrás</button>
-          </div>
-        </div> 
-        <div id="infoTalvez" class="plant-info" style="display: none;"> 
-          <h2>Información sobre Sábila</h2>
-		   <img src="https://aloepluslanzarote.com/static/media/entradas/que_es_la_sabila.jpeg" alt="Imagen de sabila" width="100" height="100"> 
-		   <h3>La sábila, una planta, produce dos sustancias que se usan en productos para el cuidado de la salud: un gel transparente y un látex amarillo. Por lo general, las personas utilizan el gel transparente de la sábila de forma tópica en cremas y ungüentos para tratar quemaduras, la psoriasis e incluso el acné.</h3>
-		  <div class="button-container">
-            <button onclick="activarPlanta(1)">Comprar Sabila</button>
-            <button id="btnRetroceso" class="button-right fade-in button">Atrás</button>
-          </div>
-        </div> 
-      </div> 
-    </div> 
-  </div> 
-  <script src= "Control.js"></script> 
-  
-  </body>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="Estilo.css">
+    <script src="Control.js"></script>
+</head>
+<body>
+    <header class="header">
+        <a href="#" class="logo"><i class="fa-solid fa-globe"></i>Plant S.A</a>
+    </header>
+    <section>
+        <div class="content">
+            <h1 align="center">Bienvenido</h1>
+        </div>
+        <div class="login">
+            <form id="login-form" onsubmit="return iniciarSesion()">
+                <div class="input-box">
+                    <input type="text" id="usuario" placeholder="Usuario" required="">
+                    <i class="fa-solid fa-user"></i>
+                </div>
+                <div class="input-box">
+                    <input type="password" id="contrasena" placeholder="Contraseña" required="">
+                    <i class="fa-solid fa-lock"></i>
+                </div>
+                <button type="submit">Iniciar sesión</button>
+            </form>
+            <div id="registro-container" class="oculto">
+                <form id="registro-form" onsubmit="return registrarUsuario()">
+                    <h1 align="center">Registro de usuario</h1>
+                    <div class="input-box">
+                        <input type="text" id="nuevo-usuario" placeholder="Nuevo Usuario" required="">
+                        <i class="fa-solid fa-user"></i>
+                    </div>
+                    <div class="input-box">
+                        <input type="password" id="nueva-contrasena" placeholder="Nueva Contraseña" required="">
+                        <i class="fa-solid fa-lock"></i>
+                    </div>
+                    <button type="submit">Registrar</button>
+                </form>
+            </div>
+            <div class="remember-forgot">
+                <a href="#" onclick="mostrarRegistro()">Registrar</a>
+            </div>
+        </div>
+    </section>    
+</body>
 </html>
+
