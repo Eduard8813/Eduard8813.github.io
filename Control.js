@@ -1,103 +1,68 @@
+// Obtener usuarios registrados del almacenamiento local
+var usuariosRegistrados = JSON.parse(localStorage.getItem("usuariosRegistrados")) || {};
 
-const mainDiv = document.getElementById("main");
-const infoDiv = document.getElementById("infoDiv");
-const question = document.getElementById("question");
-const infoSi = document.getElementById("infoSi");
-const infoNo = document.getElementById("infoNo"); 
-const infoTalvez = document.getElementById("infoTalvez");
+// Función para guardar usuarios registrados en el almacenamiento local
+function guardarUsuariosRegistrados() {
+    localStorage.setItem("usuariosRegistrados", JSON.stringify(usuariosRegistrados));
+}
 
-const btnSi = document.getElementById("btnSi");
-const btnNo = document.getElementById("btnNo");
-const btnTalvez = document.getElementById("btnTalvez");
+// Función para iniciar sesión
+function iniciarSesion() {
+    var usuario = document.getElementById("usuario").value;
+    var contrasena = document.getElementById("contrasena").value;
 
-function showElement(element) {
-    if (element) {
-        element.style.display = "block";
+    if (usuariosRegistrados.hasOwnProperty(usuario) && usuariosRegistrados[usuario] === contrasena) {
+        alert("Inicio de sesión exitoso");
+        redirigirSitio();
+        return false; // Para prevenir el comportamiento por defecto del formulario
+    } else {
+        alert("Credenciales incorrectas");
+        return false; // Para prevenir el comportamiento por defecto del formulario
     }
 }
 
-function hideElement(element) {
-    if (element) {
-        element.style.display = "none";
-    }
+// Función para registrar un nuevo usuario
+function registrarUsuario() {
+    var nuevoUsuario = document.getElementById("nuevo-usuario").value;
+    var nuevaContrasena = document.getElementById("nueva-contrasena").value;
+
+   if (nuevoUsuario in usuariosRegistrados) {
+        alert("El nombre de usuario ya existe. Por favor, elige otro.");
+        return false; // Para prevenir el comportamiento por defecto del formulario
+   } else {
+        usuariosRegistrados[nuevoUsuario] = nuevaContrasena; 
+        guardarUsuariosRegistrados();
+        alert("Usuario registrado exitosamente");
+        ocultarRegistro();
+        return false; // Para prevenir el comportamiento por defecto del formulario
+   }
 }
 
-// Event listeners para los botones de plantas
-btnSi.addEventListener("click", function() {
-    // Mostrar información específica sobre Culantro
-    hideElement(question);
-    hideElement(mainDiv);
-    showElement(infoDiv);
-    showElement(infoSi);
-    hideElement(infoNo);
-    hideElement(infoTalvez);
-});
-
-btnNo.addEventListener("click", function() {
-    // Mostrar información específica sobre Hierba buena
-    hideElement(question);
-    hideElement(mainDiv);
-    showElement(infoDiv);
-    hideElement(infoSi);
-    showElement(infoNo);
-    hideElement(infoTalvez);
-});
-
-btnTalvez.addEventListener("click", function() {
-    // Mostrar información específica sobre Sábila
-    hideElement(question);
-    showElement(mainDiv);
-    showElement(infoDiv);
-    hideElement(infoSi);
-    hideElement(infoNo);
-    showElement(infoTalvez);
-});
-
-const axios = require('axios');
-
-const url = 'https://eduard8813.github.io';
-
-function activateMotor(motorNumber) {
-  console.log(`Activando el motor ${motorNumber}`);
-  // Aquí va tu código para activar los motores
+// Función para redirigir al sitio
+function redirigirSitio() {
+   window.location.href = "http://192.168.0.13";
 }
 
-// Función para verificar las compras
-async function checkPurchases() {
-  try {
-    const response = await axios.get(url);
-
-    if (response.data.includes('comprar planta sabila')) {
-      activateMotor(1);
-    } else if (response.data.includes('comprar hierba buena')) {
-      activateMotor(2);
-    } else if (response.data.includes('comprar planta culantro')) {
-      activateMotor(3);
-    }
-  } catch (error) {
-    console.error(`Error: ${error}`);
-  }
+// Función para mostrar el formulario de registro y ocultar el formulario de inicio de sesión
+function mostrarRegistro() {
+   var registroContainer = document.getElementById("registro-container");
+   registroContainer.classList.remove("oculto");
+   
+   var loginContainer = document.getElementById("login-form");
+   loginContainer.classList.add("oculto");
+   
+   var registroEnlace = document.querySelector(".remember-forgot a");
+   registroEnlace.classList.add("oculto");
 }
 
-// Verifica las compras cada 5 segundos
-setInterval(checkPurchases, 5000);
+// Función para ocultar el formulario de registro y mostrar el formulario de inicio de sesión
+function ocultarRegistro() {
+   var registroContainer = document.getElementById("registro-container");
+   registroContainer.classList.add("oculto");
+   
+   var loginContainer = document.getElementById("login-form");
+   loginContainer.classList.remove("oculto");
 
-
-// Event listeners para los botones "Atrás"
-const btnAtrasCulantro = document.getElementById("btnAtrasCulantro");
-const btnAtrasHierbaBuena = document.getElementById("btnAtrasHierbaBuena");
-const btnRetroceso = document.getElementById("btnRetroceso");
-
-btnAtrasCulantro.addEventListener("click", function() {
-    // Mostrar la página de selección de plantas nuevamente
-    showElement(question);
-    showElement(mainDiv);
-    hideElement(infoDiv);
-});
-
-btnAtrasHierbaBuena.addEventListener("click", function() {
-     // Mostrar la página de selección de plantas nuevamente
-     showElement(question);
-     showElement(mainDiv);
-     hideElement(infoDiv);
-});
+   var registroEnlace = document.querySelector(".remember-forgot a");
+   registroEnlace.classList.remove("oculto");
+}
