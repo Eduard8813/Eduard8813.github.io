@@ -1,106 +1,126 @@
+/* Estilos generales */
 body {
     font-family: Arial, sans-serif;
-	position: relative;
-    height:86vh;
-	width: 50%;
+    background-color: #FFFFFF;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Encabezado */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 100px;
+    display: flex;
+    justify-content: left;
+    z-index: 99;
+}
+
+.header .logo {
+    font-size: 3em;
+    font-weight: 700;
+    color: #000000;
+    text-decoration: none;
+}
+
+/* Sección principal */
+section {
+    position: relative;
+    width: 80%;
+    height: 85vh;
     background: url('https://verdecora.es/blog/wp-content/uploads/2018/08/plantas-vivaces-flor-tardia.jpg') no-repeat;
     background-position: center;
     background-size: cover;
-	display: flex;
-    padding: 80px 200px 0;
+    display: flex;
+    padding: 100px 135px 0;
     align-items: center;
 }
 
-.button {
-    margin: 5px;
-    padding: 10px 20px;
-    font-size: 16px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    color: #fff;
-} 
-
-.button-left {
-    align-self: flex-start;
-    background-color: #3498db;
+section .content {
+    max-width: 600px;
+    color: #FFFFFF;
 }
 
-.button-right {
-    align-self: flex-end;
-    background-color: #2ecc71;
+.content h1 {
+    font-size: 3em;
+    letter-spacing: 0.3em;
+    color: #000000;
 }
 
-.container {
-    max-width: 1200px;
-    padding: 20px;
-    text-align: center;
-}
-
-.header-title {
-    color: #00FFFF;
-    font-size: 32px;
+/* Botón */
+button {
+    width: 100%;
+    height: 50px;
+    border: 2px solid #000000;
+    border-radius: 10px;
+    font-size: 20px;
+    font-weight: 800;
     margin-bottom: 20px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+    background-color: #ff6633;
+    color: #000000;
 }
 
-.main {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    margin-top: 20px;
+/* Registro */
+.login {
+    position: relative;
+    width: 200px;
+    margin-left: 40px;
 }
 
-.plant-button {
-    flex: 1;
-    margin: 5px;
-    padding: 15px 25px;
-    font-size: 18px;
+.login h1 {
+    text-align: left;
+    color: #000000;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.input-box {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    padding: 40px 0;
+}
+
+.input-box input[type="text"],
+.input-box input[type="password"] {
+    width: 100%;
+    height: 50px;
+    border: 2px solid #000000;
+    border-radius: 40px;
+    background: transparent;
+    outline: none;
+    padding: 0 20px;
+    font-size: 1.3em;
+    transition: border-color 0.3s ease-in-out;
+}
+
+.input-box input[type="text"]:focus,
+.input-box input[type="password"]:focus {
+    border-color: #000000;
+}
+
+/* Estilo adicional para botones */
+.btn-registro {
+    background-color: #000000;
+    color: white;
     border: none;
+    padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-registro:hover,
+button:hover {
     background-color: #000000;
-    color: #0000FF;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    transition: transform 0.4s ease, background-color 0.4s ease;
 }
 
-.plant-button:hover {
-    transform: translateY(-5px);
-    background-color: #3498db;
-    color: #F5DEB3;
-}
-
-.info-container {
-    margin-top: 20px;
+/* Oculto */
+.oculto {
     display: none;
-}
-
-.plant-info {
-    background-color: #fff;
-    border-radius: 50px;
-    padding: 50px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    max-width: 300px;
-    margin: 0 auto;
-    color: #333;
-}
-
-.fade-in {
-    animation: fadeIn 0.9s ease-out both;
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-.button-container {
-    display: flex;
-    justify-content: space-between;
 }
