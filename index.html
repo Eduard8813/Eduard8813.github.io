@@ -1,50 +1,31 @@
-
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="Estilo.css">
-    <script src="Control.js"></script>
-</head>
-<body>
-    <header class="header">
-        <a href="#" class="logo"><i class="fa-solid fa-globe"></i>Plant S.A</a>
-    </header>
-    <section>
-        <div class="content">
-            <h1 align="center">Bienvenido</h1>
-        </div>
-        <div class="login">
-            <form id="login-form" onsubmit="return iniciarSesion()">
-                <div class="input-box">
-                    <input type="text" id="usuario" placeholder="Usuario" required="">
-                    <i class="fa-solid fa-user"></i>
-                </div>
-                <div class="input-box">
-                    <input type="password" id="contrasena" placeholder="Contraseña" required="">
-                    <i class="fa-solid fa-lock"></i>
-                </div>
-                <button type="submit">Iniciar sesión</button>
-            </form>
-            <div id="registro-container" class="oculto">
-                <form id="registro-form" onsubmit="return registrarUsuario()">
-                    <h1 align="center">Registro de usuario</h1>
-                    <div class="input-box">
-                        <input type="text" id="nuevo-usuario" placeholder="Nuevo Usuario" required="">
-                        <i class="fa-solid fa-user"></i>
-                    </div>
-                    <div class="input-box">
-                        <input type="password" id="nueva-contrasena" placeholder="Nueva Contraseña" required="">
-                        <i class="fa-solid fa-lock"></i>
-                    </div>
-                    <button type="submit">Registrar</button>
-                </form>
-            </div>
-            <div class="remember-forgot">
-                <a href="#" onclick="mostrarRegistro()">Registrar</a>
-            </div>
-        </div>
-    </section>    
-</body>
-</html>
-
+	<!DOCTYPE html>
+	<html>
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" type="text/css" href="Estilo.css">
+		<script src="control.js"></script>
+	</head>
+	<body>
+		<header class="header">
+    <a href="#" class="logo">
+        <i class="fa-solid fa-globe"></i>PLANT S.A </span>
+    </a>
+</header>
+		<section>
+			<div class="content">
+				<h1 align="center">Bienvenido</h1>
+			</div>
+			<div class="login">
+				<form id="login-form" onsubmit="return iniciarSesion()">
+					<div class="input-box">
+						<input type="text" id="usuario" placeholder="Usuario" required="">
+						<i class="fa-solid fa-user"></i>
+					</div>
+					<div class="input-box">
+						<input type="password" id="contrasena" placeholder="Contraseña" required="">
+						<i class="fa-solid fa-lock"></i>
+					</div>
+					<button type="submit" id= "boton-iniciar"> Iniciar sesión</button>
+				</form>
+				</body>
+		</html>
