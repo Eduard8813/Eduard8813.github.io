@@ -7,7 +7,7 @@ function iniciarSesion() {
     };
 
     if (usuariosPermitidos.hasOwnProperty(usuario) && usuariosPermitidos[usuario] === contrasena) {
-        window.location.href = "https://github.com/Eduard8813/Eduard8813.github.io/edit/main/index.html";
+        window.location.href = "192.168.36.8";
         return false; 
     } else {
         alert("Usuario o contraseña incorrectos. Por favor, inténtalo de nuevo.");
